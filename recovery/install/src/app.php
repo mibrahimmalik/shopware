@@ -86,13 +86,13 @@ function selectLanguage(array $allowedLanguages)
     /**
      * Load language file
      */
-    $selectedLanguage = 'de';
+    $selectedLanguage = 'en';
     if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
         $selectedLanguage = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
         $selectedLanguage = strtolower(substr($selectedLanguage[0], 0, 2));
     }
     if (empty($selectedLanguage) || !in_array($selectedLanguage, $allowedLanguages)) {
-        $selectedLanguage = 'de';
+        $selectedLanguage = 'en';
     }
 
     if (isset($_REQUEST['language']) && in_array($_REQUEST['language'], $allowedLanguages)) {
